@@ -1,0 +1,372 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Trámites</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="{% static 'images/icons/favicon.png' %}"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'staticfiles/vendor/bootstrap/css/bootstrap.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'staticfiles/fonts/fontawesome-5.0.8/css/fontawesome-all.min.css' %}">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{% static 'staticfiles/material-design/font/flaticon.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'staticfiles/fonts/iconic/css/material-design-iconic-font.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'staticfiles/vendor/animate/animate.css' %}">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="{% static 'staticfiles/vendor/css-hamburgers/hamburgers.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'staticfiles/vendor/animsition/css/animsition.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'staticfiles/css/util.min.css' %}">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="{% static 'staticfiles/css/main.css' %}">
+<!--===============================================================================================-->
+</head>
+
+
+<body class="animsition">
+	
+	<!-- Header -->
+	<header>
+		<!-- Header desktop -->
+		<div class="container-menu-desktop">
+			<div class="topbar">
+				<div class="content-topbar container h-100">
+					<div class="left-topbar">
+						<span class="left-topbar-item flex-wr-s-c">
+							<span class="fab flaticon-front-bus"></span>
+							<span>
+								Camagüey , Cuba
+							</span>
+						</span>
+
+						<a href="{% url 'blog:about' %}" class="left-topbar-item">
+							¿Quienes Somos?
+						</a>
+
+						<a href="{% url 'blog:contact' %}" class="left-topbar-item">
+							Contáctenos
+						</a>
+
+						<a href="{% url 'user:registrar' %}" class="left-topbar-item">
+							Registrarse
+						</a>
+
+						<a href="{% url 'user:login' %}" class="left-topbar-item">
+							Iniciar Sesión
+						</a>
+					</div>
+
+					<div class="right-topbar">
+						<a href="#">
+							<span class="fab fa-facebook-f"></span>
+						</a>
+
+						<a href="#">
+							<span class="fab fa-twitter"></span>
+						</a>
+
+						<a href="#">
+							<span class="fab fa-instagram"></span>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Header Mobile -->
+			<div class="wrap-header-mobile">
+				<!-- Logo moblie -->		
+				<div class="logo-mobile">
+					<a href="{% url 'blog:index' %}"><img src="{% static 'images/icons/logo-01.png' %}" alt="IMG-LOGO"></a>
+				</div>
+
+				<!-- Button show menu -->
+				<div class="btn-show-menu-mobile hamburger hamburger--squeeze m-r--8">
+					<span class="hamburger-box">
+						<span class="hamburger-inner"></span>
+					</span>
+				</div>
+			</div>
+
+			<!-- Menu Mobile -->
+			<div class="menu-mobile">
+				<ul class="topbar-mobile">
+					<li class="left-topbar">
+						<span class="left-topbar-item flex-wr-s-c">
+							<span class="fab flaticon-front-bus"></span>
+							<span>
+								Camagüey , Cuba
+							</span>
+						</span>
+					</li>
+
+					<li class="left-topbar">
+						<a href="{% url 'blog:about' %}" class="left-topbar-item">
+							¿Quienes Somos?
+						</a>
+
+						<a href="{% url 'blog:contact' %}" class="left-topbar-item">
+							Contáctenos
+						</a>
+
+						<a href="{% url 'user:registrar' %}" class="left-topbar-item">
+							Registrarse
+						</a>
+
+						<a href="{% url 'user:login' %}" class="left-topbar-item">
+							Iniciar Sesión
+						</a>
+					</li>
+
+					<li class="right-topbar">
+						<a href="#">
+							<span class="fab fa-facebook-f"></span>
+						</a>
+
+						<a href="#">
+							<span class="fab fa-twitter"></span>
+						</a>
+
+						<a href="#">
+							<span class="fab fa-instagram"></span>
+						</a>
+					</li>
+				</ul>
+
+				<ul class="main-menu-m">
+					<li>
+						<a href="{% url 'blog:index' %}">Inicio</a>
+						<ul class="sub-menu-m">
+							<li><a href="{% url 'noticia:noticias' %}">Noticias</a></li>
+							<li><a href="{% url 'blog:about' %}">Quienes Somos?</a></li>
+							<li><a href="{% url 'blog:contact' %}">Contáctenos</a></li>
+						</ul>
+
+						<span class="arrow-main-menu-m">
+							<i class="fa fa-angle-right" aria-hidden="true"></i>
+						</span>
+					</li>
+
+				</ul>
+			</div>
+			
+			<!--  -->
+			<div class="wrap-logo no-banner container">
+				<!-- Logo desktop -->		
+				<div class="logo">
+					<a href="{% url 'blog:index' %}"><img src="{% static 'images/icons/logo-01.png' %}" alt="LOGO"></a>
+				</div>
+			</div>
+			
+			<!--   -->
+			<h4 style="color: transparent;">Imagen_logo</h4>
+			
+			<!--  -->
+			<div class="wrap-main-nav">
+				<div class="main-nav">
+					<!-- Menu desktop -->
+					<nav class="menu-desktop">
+						<a class="logo-stick" href="{% url 'blog:index' %}">
+							<img src="{% static 'images/icons/logo-01.png' %}" alt="LOGO">
+						</a>
+
+						<ul class="main-menu justify-content-center">
+							<li class="main-menu-active">
+								<a href="{% url 'blog:index' %}">Inicio</a>
+								<ul class="sub-menu">
+									<li><a href="{% url 'noticia:noticias' %}">Noticias</a></li>
+									<li><a href="{% url 'blog:about' %}">Quienes Somos?</a></li>
+									<li><a href="{% url 'blog:contact' %}">Contáctenos</a></li>
+								</ul>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>	
+		</div>
+	</header>
+		
+	<!-- Headline -->
+	<div class="container">
+		<div class="bg0 flex-wr-sb-c p-rl-20 p-tb-8">
+			<div class="f2-s-1 p-r-30 size-w-0 m-tb-6 flex-wr-s-c">
+				<span class="text-uppercase cl2 p-r-8">
+					EPT:
+				</span>
+
+				<span class="dis-inline-block cl6 slide100-txt pos-relative size-w-0" data-in="fadeInDown" data-out="fadeOutDown">
+					<span class="dis-inline-block slide100-txt-item animated visible-false">
+						Tu mejor opción <span class="fab flaticon-thumb-up-button"></span>
+					</span>
+					
+					<span class="dis-inline-block slide100-txt-item animated visible-false">
+						Seguridad y confianza <span class="fab flaticon-good-mood-emoticon"></span>
+					</span>
+
+					<span class="dis-inline-block slide100-txt-item animated visible-false">
+						Viaja con nosotros <span class="fab flaticon-front-car"></span>
+					</span>
+				</span>
+			</div>
+
+			<!-- SEARCH FORM -->
+            {% block barra_busqueda %}
+    		<form method="GET">
+                <div id="custom-search-input">
+                    <div class="input-group col-md-12">
+                        <input type="text" class="form-control" placeholder="Buscar..." id="buscar" value="{{ resquest.GET.buscar }}">
+                        <div class="input-group-list">
+                            <button type="submit" class="btn btn-navbar">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            {% endblock barra_busqueda %}
+            </div>
+        </div>
+
+	<!-- Blog Detail -->
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-md-10 col-lg-8 p-b-30">
+				<div class="p-r-10 p-r-0-sr991">
+					<div class="p-b-70">
+						<h3 class="f1-l-3 cl2 p-b-16 p-t-33 respon2">
+							 GACETA OFICIAL DE LA REPÚBLICA DE CUBA MINISTERIO DE JUSTICIA.
+						</h3>
+					</div>
+                        <h1>MINISTERIO
+                            Ministerio del Transporte Resolución No. 349/2019</h1>
+                        <h1>REGLAMENTO PARA LA REALIZACIÓN
+                            DE CAMBIOS Y CONVERSIONES DE VEHÍCULOS DE MOTOR,
+                            REMOLQUES Y SEMIRREMOLQUES (GOC-2019-854-O75)</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Post -->
+	<section class="bg0 p-t-70">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-10 col-lg-8">
+					<div class="p-b-20">
+						<!-- TRAMITES  -->
+                        {% if trams %}
+                            {% for tram in trams %}
+						<div class="p-b-20">
+							<div class="how2 how2-cl1 flex-sb-c m-r-10 m-r-0-sr991">
+								<h3 class="f1-m-2 cl12 tab01-title">
+                                    {{ tram.tramite }}
+								</h3>
+							</div>
+
+							<div class="row p-t-35">
+								<div class="col-sm-6 p-r-25 p-r-15-sr991">
+									<!-- Item post -->	
+									<div class="m-b-30">
+										<a href="{% url 'tramite:detalle_tram' tram.slug_tram %}" class="wrap-pic-w hov1 trans-03">
+											<img  src={% static  tram.imagen_name %} alt="IMG">
+										</a>
+
+										<div class="p-t-20">
+											<h5 class="p-b-5">
+												<a href="{% url 'tramite:detalle_tram' tram.slug_tram %}" class="f1-m-3 cl2 hov-cl10 trans-03">
+                                                    {{ tram.descripcion }}
+												</a>
+											</h5>
+										</div>
+									</div>
+								</div>
+							</div>
+                                {% endfor %}
+                            {% endif %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<!-- Footer -->
+	<footer>
+		<div class="bg2 p-t-40 p-b-25">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4 p-b-20">
+						<div class="size-h-3 flex-s-c">
+							<a href="{% url 'blog:index' %}">
+								<img class="max-s-full" src="{% static 'images/icons/logo-02.png' %}" alt="LOGO">
+							</a>
+						</div>
+
+						<!--   -->
+						<h4 style="color: transparent;">Imagen_logo</h4>
+
+						<div>
+							<p class="f1-s-1 cl11 p-b-16">
+								Empresa Provincial de Transporte de Camagüey 
+							</p>
+
+							<p class="f1-s-1 cl11 p-b-16">
+								<a style="color: skyblue;"><span class="fab flaticon-map-placeholder"></span></a>
+								Avenida de los Mártires 253 e/ Simón Reyes y Julio Sanguily, La Vigía. Municipio y Provincia Camaguey.
+							</p>
+							<p class="f1-s-1 cl11 p-b-16">
+								<a style="color: skyblue;"><span class="fab flaticon-phone-call-button"></span></a>
+								32 283468, 32 283446
+							</p>
+							<p class="f1-s-1 cl11 p-b-16">
+								<a style="color: skyblue;"><span class="fab flaticon-write-email-envelope-button"></span></a>
+								<a>jefedespacho@eptcmw.co.cu</a>
+							</p>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="bg11">
+			<div class="container size-h-4 flex-c-c p-tb-15">
+				<span class="f1-s-1 cl0 txt-center">
+					Copyright © 2018 
+
+					<a href="#" class="f1-s-1 cl10 hov-link1"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </a>
+				</span>
+			</div>
+		</div>
+	</footer>
+
+	<!-- Back to top -->
+	<div class="btn-back-to-top" id="myBtn">
+		<span class="symbol-btn-back-to-top">
+			<span class="fas fa-angle-up"></span>
+		</span>
+	</div>
+
+
+<!--===============================================================================================-->	
+	<script src="{% static 'staticfiles/vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'staticfiles/vendor/animsition/js/animsition.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'staticfiles/vendor/bootstrap/js/popper.js' %}"></script>
+	<script src="{% static 'staticfiles/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'staticfiles/js/main.js' %}"></script>
+
+</body>
+</html>

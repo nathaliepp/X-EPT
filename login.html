@@ -1,0 +1,281 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>EPT | Login</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--===============================================================================================-->
+  <link rel="stylesheet" href="{% static 'staticfiles/fontawesome-free/css/all.min.css' %}">
+  <!--===============================================================================================-->
+  <link rel="stylesheet" href="{% static 'staticfiles/icheck-bootstrap/icheck-bootstrap.min.css' %}">
+  <!--===============================================================================================-->
+  <link rel="stylesheet" href="{% static 'staticfiles/css/adminlte.min.css' %}">
+  <!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="{% static 'images/icons/favicon.png' %}"/>
+  <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'staticfiles/vendor/bootstrap/css/bootstrap.min.css' %}">
+  <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'staticfiles/fonts/fontawesome-5.0.8/css/fontawesome-all.min.css' %}">
+  <!--===============================================================================================-->
+	  <link rel="stylesheet" type="text/css" href="{% static 'staticfiles/material-design/font/flaticon.css' %}">
+  <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'staticfiles/fonts/iconic/css/material-design-iconic-font.min.css' %}">
+  <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'staticfiles/css/style.css' %}">
+  <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'staticfiles/vendor/animate/animate.css' %}">
+  <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'staticfiles/vendor/css-hamburgers/hamburgers.min.css' %}">
+  <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'staticfiles/vendor/animsition/css/animsition.min.css' %}">
+  <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'staticfiles/css/util.min.css' %}">
+  <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'staticfiles/css/main.css' %}">
+  <!--===============================================================================================-->
+  
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
+
+
+
+
+<body class="animsition">
+
+	<!-- Header -->
+	<header>
+		<!-- Header desktop -->
+		<div class="container-menu-desktop">
+			<div class="topbar">
+				<div class="content-topbar h-100 p-rl-30">
+					<div class="align-self-stretch size-w-0 pos-relative m-r-30">
+						<div class="f2-s-1 flex-wr-s-c s-full ab-t-l p-b-2">
+							<span class="text-uppercase cl0 p-r-8">
+								EPT:
+							</span>
+
+							<span class="dis-inline-block cl16 slide100-txt pos-relative size-w-0" data-in="fadeInDown" data-out="fadeOutDown">
+								<span class="dis-inline-block slide100-txt-item animated visible-false">
+									Tu mejor opción <span class="fab flaticon-thumb-up-button"></span>
+								</span>
+
+								<span class="dis-inline-block slide100-txt-item animated visible-false">
+									Seguridad y confianza <span class="fab flaticon-good-mood-emoticon"></span>
+								</span>
+
+								<span class="dis-inline-block slide100-txt-item animated visible-false">
+									Viaja con nosotros <span class="fab flaticon-front-car"></span>
+								</span>
+							</span>
+						</div>
+					</div>
+
+
+					<div class="flex-wr-e-c">
+						<div class="left-topbar">
+
+
+							<a href="{% url 'blog:about' %}" class="left-topbar-item">
+								¿Quienes Somos?
+							</a>
+
+							<a href="{% url 'blog:contact' %}" class="left-topbar-item">
+								Contáctenos
+							</a>
+
+							<a href="{% url 'user:registrar' %}" class="left-topbar-item">
+								Registrarse
+							</a>
+
+							<a href="{% url 'user:login' %}" class="left-topbar-item">
+								Iniciar Sesión
+							</a>
+
+							<a href="#" class="left-topbar-item"></a>
+						</div>
+
+						<div class="right-topbar p-l-18">
+							<a href="#">
+								<span class="fab fa-facebook-f"></span>
+							</a>
+
+							<a href="#">
+								<span class="fab fa-twitter"></span>
+							</a>
+
+							<a href="#">
+								<span class="fab fa-instagram"></span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+        </div>
+    </header>
+
+    <div class="hold-transition login-page">
+    <div class="login-box">
+        <div class="login-logo">
+            <a><img src="{% static 'images/icons/logo-01.png' %}" alt="LOGO"></a>
+        </div>
+        <div class="card">
+            <div class="card-body login-card-body">
+                <p class="login-box-msg" style="color:darkblue; font-weight: bold">Iniciar Sesión</p>
+
+            <form method="POST">
+                {% csrf_token %}
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Usuario" name="username">
+                <div class="input-group-append">
+                    <div class="input-group-text">
+                        <span class="fab flaticon-user-shape"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-group mb-3">
+                <input type="password" class="form-control" placeholder="Contraseña" name="password">
+                <div class="input-group-append">
+                    <div class="input-group-text">
+                        <span class="fab flaticon-locked-padlock"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-8">
+                    <div class="icheck-primary">
+                        <input type="checkbox" id="remember">
+                        <label for="remember">
+                            Recordar siempre
+                        </label>
+                    </div>
+                </div>
+
+                <!-- /.col -->
+                <div class="col-4">
+                    <button type="submit" class="btn btn-navbar">Iniciar
+                        <i class="fab flaticon-right-arrow-forward"></i>
+                    </button>
+                </div>
+                <!-- /.col -->
+                </div>
+            </form>
+            <!--
+            <div class="social-auth-links text-center mb-3">
+                <p style="color: transparent;">- OR -</p>
+                <a href="#" class="btn btn-block btn-primary">
+                    <i class="fab fa-facebook mr-2"></i> Iniciar Sesión con Facebook
+                </a>
+                <a href="#" class="btn btn-block btn-danger">
+                    <i class="fab fa-google-plus mr-2"></i> Iniciar Sesión con Google+
+                </a>
+            </div> -->
+
+            <h1 style="color:transparent">REGISTRARSE</h1>
+            <p class="mb-1">
+                Registrarse
+            </p>
+                <a href="{% url 'user:registrar' %}" class="text-center">
+                    <button type="submit" class="btn btn-navbar">
+                        <i class="fab flaticon-add-user-button"></i>
+                    </button>
+                </a>
+
+        </div>
+      </div>
+    </div>
+    </div>
+
+
+<!-- Footer -->
+	<footer>
+		<div class="bg2 p-t-40 p-b-25">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4 p-b-20">
+						<div class="size-h-3 flex-s-c">
+                            <a>
+								<img class="max-s-full" src="{% static 'images/icons/logo-02.png' %}" alt="LOGO">
+                            </a>
+						</div>
+
+						<!--   -->
+						<h4 style="color: transparent;">Imagen_logo</h4>
+
+						<div>
+							<p class="f1-s-1 cl11 p-b-16">
+								Empresa Provincial de Transporte de Camagüey
+							</p>
+
+							<p class="f1-s-1 cl11 p-b-16">
+								<a style="color: skyblue;"><span class="fab flaticon-map-placeholder"></span></a>
+								Avenida de los Mártires 253 e/ Simón Reyes y Julio Sanguily, La Vigía. Municipio y Provincia Camagüey .
+							</p>
+							<p class="f1-s-1 cl11 p-b-16">
+								<a style="color: skyblue;"><span class="fab flaticon-phone-call-button"></span></a>
+								32 283468, 32 283446
+							</p>
+							<p class="f1-s-1 cl11 p-b-16">
+								<a style="color: skyblue;"><span class="fab flaticon-write-email-envelope-button"></span></a>
+								<a>jefedespacho@eptcmw.co.cu</a>
+							</p>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="bg11">
+			<div class="container size-h-4 flex-c-c p-tb-15">
+				<span class="f1-s-1 cl0 txt-center">
+					Copyright © 2018
+
+					<a href="#" class="f1-s-1 cl10 hov-link1"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </a>
+				</span>
+			</div>
+		</div>
+	</footer>
+
+
+
+
+    <!-- Back to top -->
+    <div class="btn-back-to-top" id="myBtn">
+        <span class="symbol-btn-back-to-top">
+            <span class="fas fa-angle-up"></span>
+        </span>
+    </div>
+
+
+
+
+    <script src="{% static 'staticfiles/vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'staticfiles/vendor/animsition/js/animsition.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'staticfiles/vendor/bootstrap/js/popper.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'staticfiles/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'staticfiles/js/main.js' %}"></script>
+<!--===============================================================================================-->
+<script src="{% static 'staticfiles/jquery/jquery.min.js' %}"></script>
+<!--===============================================================================================-->
+<script src="{% static 'staticfiles/js/bootstrap.bundle.min.js' %}"></script>
+<!-- AdminEPT App -->
+<script src="{% static 'staticfiles/js/adminlte.min.js' %}"></script>
+
+
+</body>
+</html>
